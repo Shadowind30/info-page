@@ -1,0 +1,43 @@
+import { Component, OnInit } from '@angular/core';
+
+import { GithubInfoService } from '../../shared/github-info.service';
+import { IGithubUser } from '../../github-info.model';
+
+@Component({
+  selector: 'app-left-sidebar',
+  templateUrl: './left-sidebar.component.html',
+  styleUrls: ['./left-sidebar.component.scss']
+})
+
+export class LeftSidebarComponent implements OnInit {
+
+  constructor(private githubInfo: GithubInfoService) { }
+
+  canEdit: boolean = false;
+  summary: string = localStorage.summary || '';
+  user: IGithubUser;
+  isLoading: boolean = true;
+
+  setCanEdit(){
+  	this.canEdit = !this.canEdit;
+  	if (!this.canEdit) {
+  		this.saveSummary();
+  	}
+  }
+
+  saveSummary(){
+  	if (!this.summary) return;
+  	localStorage.setItem('summary', this.summary)
+  }
+
+
+  ngOnInit(): void {
+
+  	this.githubInfo.getUser()
+  			.subscribe( (data: IGithubUser) => {
+  				this.user = data;
+  				this.isLoading = false;
+  			})
+  }
+
+}

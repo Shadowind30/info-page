@@ -1,0 +1,52 @@
+* {
+font-family: roboto;
+}
+
+.navbar{
+	display: flex;
+	background: #333;
+	margin-bottom: 2%
+}
+
+.navbar button{
+	width: 50%;
+	background: #ddd;
+	color: #000;
+	border: 0;
+	padding: 2%;
+	
+}
+
+.navbar button.active {
+	background: #333;
+	color: #fff;
+}
+
+// On Full View 
+
+div.content app-left-sidebar, div.content app-right-sidebar {
+	width: 25%;
+}
+
+div.content app-repo-card-container {
+	width: 50%;
+}
+
+
+// On Tab View
+
+.single-tab{
+	display: flex;
+	justify-content: center;
+}
+
+.single-tab app-left-sidebar, .single-tab app-right-sidebar {
+	width: 50%;
+	margin-bottom: 10%;
+}
+
+.single-tab repo-card-container {
+	width: 75%;
+	margin-bottom: 10%;
+}
+

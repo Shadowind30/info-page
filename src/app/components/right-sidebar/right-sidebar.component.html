@@ -1,0 +1,15 @@
+<div class="container">
+	<h1 class="title">Skills</h1>
+	<p *ngIf="skills.length === 0">Add a skill from the form below</p>
+	<ul class="skills">
+		<li *ngFor="let skill of skills">
+			<h3>{{skill}}</h3> 
+			<button (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
+			<button (click)="removeSkill(skill)" [disabled] = "isUpdating">X</button>  
+		</li>
+	</ul>
+	<input *ngIf="canEdit" [(ngModel)] = "formValue"/>
+	<button (click)="setEdit()" class="save-button">
+	{{ canEdit === true ? 'Save' : 'Add Skill'}}
+</button>
+</div>
