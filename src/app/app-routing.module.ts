@@ -16,6 +16,7 @@ const routes: Routes = [
 		path: 'tabs',
 		component: TabsPageComponent,
 		children: [
+			{path: '', redirectTo: 'about-me', pathMatch: 'full'},
 			{path: 'about-me', component: LeftSidebarComponent},
 			{path: 'skills', component: RightSidebarComponent},
 			{path: 'repos', component: RepoCardContainerComponent},
