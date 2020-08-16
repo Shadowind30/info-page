@@ -10,7 +10,7 @@ export class RightSidebarComponent implements OnInit {
 
   constructor() { }
 
-  skills: string[] = this.getSkills() || [];
+  skills: string[] = this.getSkills() || ['HTML', 'CSS', 'JAVASCRIPT', 'TYPESCRIPT', 'ANGULAR', 'IONIC', 'REACT'];
   canEdit: boolean = false;
   formValue: string = ''; 
   isUpdating: boolean = false;
@@ -38,6 +38,7 @@ export class RightSidebarComponent implements OnInit {
   }
 
   addSkill (newSkill: string) {
+
     if (!newSkill || this.checkSkill()) return;
   	this.skills.push(newSkill.toUpperCase());
   	this.clearForm();
@@ -45,12 +46,18 @@ export class RightSidebarComponent implements OnInit {
   }
 
   getSkills(): string[] {
-  	return JSON.parse(localStorage.getItem('skills'));
+    if (localStorage.getItem('skills')) {
+  	  return JSON.parse(localStorage.getItem('skills'));
+    }
 
   }
 
   getSkill(skillName: string): string{
-  	return this.getSkills().find(skill => skill === skillName);
+   if (!this.skills) {
+  	return this.getSkills()?.find(skill => skill === skillName);
+   } else {
+      return '';
+    }
 
   }
 
