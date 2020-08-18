@@ -9,6 +9,7 @@ import {GithubInfoService} from './github-info.service';
 import { LeftSidebarComponent } from '../components/left-sidebar/left-sidebar.component';
 import { RightSidebarComponent } from '../components/right-sidebar/right-sidebar.component';
 import { RepoCardContainerComponent } from '../components/repo-card-container/repo-card-container.component';
+import { SpinnerLoaderComponent } from '../components/spinner-loader/spinner-loader.component';
 
 
 
@@ -17,6 +18,7 @@ import { RepoCardContainerComponent } from '../components/repo-card-container/re
   	LeftSidebarComponent,
   	RepoCardContainerComponent,
   	RightSidebarComponent,
+    SpinnerLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { RepoCardContainerComponent } from '../components/repo-card-container/re
   	LeftSidebarComponent,
   	RepoCardContainerComponent,
   	RightSidebarComponent,
+    SpinnerLoaderComponent
   ],
   providers: [GithubInfoService]
 })
