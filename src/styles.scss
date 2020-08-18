@@ -1,6 +1,30 @@
-* {
-font-family: roboto;
+
+
+html {
+	font-size: 16px;
+	font-family: roboto;
 }
+
+
+ @media (max-width: 850px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+ @media (max-width: 620px) {
+	html {
+		font-size: 10px;
+	}
+}
+
+	
+app-left-sidebar, app-repo-card-container, app-right-sidebar {
+		width: 90%;
+
+}
+
+
 
 .navbar{
 	display: flex;
@@ -22,14 +46,24 @@ font-family: roboto;
 	color: #fff;
 }
 
+h1.error-text {
+	color:#f33;
+}
+
 // On Full View 
+
+div.content {
+	display: flex;
+}
 
 div.content app-left-sidebar, div.content app-right-sidebar {
 	width: 25%;
+	font-size: 0.8rem;
 }
 
 div.content app-repo-card-container {
 	width: 50%;
+	font-size: 1.25rem;
 }
 
 
@@ -42,11 +76,28 @@ div.content app-repo-card-container {
 
 .single-tab app-left-sidebar, .single-tab app-right-sidebar {
 	width: 50%;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
+	font-size: 1.75rem;
 }
 
 .single-tab repo-card-container {
 	width: 75%;
 	margin-bottom: 10%;
+	font-size: 1.5rem;
 }
 
+ @media (max-width: 500px) {
+
+ 	html {
+ 		font-size: 14px;
+ 	}
+
+ 	div.content {
+ 		display: block;
+ 	}
+
+ 	app-right-sidebar div.single-skill {
+ 		font-size: 1.5em;
+ 	}
+
+ }

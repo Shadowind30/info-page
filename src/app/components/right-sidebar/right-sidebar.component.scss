@@ -9,41 +9,49 @@ div.container,{
 
 h1.title{
 	text-align: center;
+	font-size: 5em;
 }
 
-ul.skills{
+div.skills{
 	display: flex;
 	flex-direction: column;
-	list-style: none;
 	justify-content: center;
 	align-items: center;
 }
 
-li {
-	width: 80%;
+div.single-skill {
+	flex-basis: 90%;
 }
 
+div.skill-options button {
+	text-align: left;
+	width: 50px;
+	padding: 20%;	
+	border: 0;
+}
+
+div.skill-options button:nth-child(even) {
+	background: #000;
+	color:#ddd;
+
+}
+
+
 input{
-	width: 80%;
+	width: 60%;
 	margin: 5%;
-	padding: 5%;
+	padding: 2%;
 	resize: none;
 	border: 5% solid;
 	background: #333;
 	color: #fff;
-	font-size: 1.15em;
+	font-size: 1.2em;
 }
 
-button:not(.save-button) {
-	width: 40%;
-	padding: 2%;
-	margin: 2%;
-	text-align: center;
-}
 
 button.save-button {
 	width: 40%;
 	padding: 2%;
-	margin-bottom: 10%;
+	margin: 10% 0;
 	text-align: center;
 }

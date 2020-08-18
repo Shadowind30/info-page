@@ -28,7 +28,7 @@ h1 {
 }
 
 .title{
-	font-size: 1.25em;
+	font-size: 2vmax;
 	text-align: center;
 }
 
@@ -59,5 +59,13 @@ h3, .star-text{
 }
 
 .link:hover{
-	color: #ccc;
+	color: #000;
+}
+
+.link:visited {
+	color: #000;
+}
+
+.link:visited:hover{
+	color: #fff;
 }
