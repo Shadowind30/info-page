@@ -1,8 +1,13 @@
 <div class="container">
-	<app-spinner-loader *ngIf="isLoading"></app-spinner-loader>
+	<app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
+
+	<h1 *ngIf="isLoading && !isError">Loading...</h1>
+	<h1 class="error-text" *ngIf="isError">Request Failed</h1>
+  
+
 
 	<img *ngIf="!isLoading" [src]="user.avatar_url" alt="user" />
-
+	
 	<div class="name" *ngIf="!isLoading">
 		<strong>{{user.name}}</strong>
 	</div>

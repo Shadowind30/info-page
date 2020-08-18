@@ -17,6 +17,7 @@ export class LeftSidebarComponent implements OnInit {
   summary: string = localStorage.summary || '';
   user: IGithubUser;
   isLoading: boolean = true;
+  isError: boolean = false;
 
   setCanEdit(){
   	this.canEdit = !this.canEdit;
@@ -30,6 +31,14 @@ export class LeftSidebarComponent implements OnInit {
   	localStorage.setItem('summary', this.summary)
   }
 
+  setError() {
+    if (this.isLoading) {
+      this.isError = true;
+    }
+  } 
+
+
+ 
 
   ngOnInit(): void {
 
@@ -37,7 +46,15 @@ export class LeftSidebarComponent implements OnInit {
   			.subscribe( (data: IGithubUser) => {
   				this.user = data;
   				this.isLoading = false;
+          this.isError = false;
   			})
+
+    setTimeout(() =>  {
+    this.setError();
+  }, 10000);
+
   }
+
+  
 
 }

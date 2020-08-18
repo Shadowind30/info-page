@@ -15,6 +15,13 @@ export class RepoCardContainerComponent implements OnInit {
 
   githubRepos: IGithubRepo[];
   isLoading: boolean = true;
+  isError: boolean = false;
+
+    setError() {
+    if (this.isLoading) {
+      this.isError = true;
+    }
+  }
 
   constructor(private githubInfo: GithubInfoService) {}
   
@@ -24,6 +31,11 @@ export class RepoCardContainerComponent implements OnInit {
   	    .subscribe((data: IGithubRepo[]) => {
           this.githubRepos = [...data];
           this.isLoading = false;
+          this.isError = false;
         });
+
+    setTimeout(() =>  {
+      this.setError();
+    }, 10000);
   }
 }
