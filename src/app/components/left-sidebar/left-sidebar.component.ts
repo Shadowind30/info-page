@@ -27,7 +27,6 @@ export class LeftSidebarComponent implements OnInit {
   }
 
   saveSummary(){
-  	if (!this.summary) return;
   	localStorage.setItem('summary', this.summary)
   }
 
