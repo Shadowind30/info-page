@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-import {IGithubRepo} from '../../github-info.model';
-import { GithubInfoService } from '../../shared/github-info.service';
+import {IGithubRepo} from '@app-shared/github-info.model';
+import { GithubInfoService } from '@app-shared/github-info.service';
 
 @Component({
   selector: 'app-repo-card-container',

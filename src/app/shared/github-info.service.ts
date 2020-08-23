@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-import { IGithubRepo, IGithubUser} from '../github-info.model';
+import { IGithubRepo, IGithubUser} from './github-info.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GithubInfoService } from '../../shared/github-info.service';
-import { IGithubUser } from '../../github-info.model';
+import { GithubInfoService } from '@app-shared/github-info.service';
+import { IGithubUser } from '@app-shared/github-info.model';
 
 @Component({
   selector: 'app-left-sidebar',
