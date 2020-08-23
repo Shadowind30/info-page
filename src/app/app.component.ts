@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent {
-	view: string = localStorage.getItem('view') || 'full';
-
-	toggleView() {
-		if (this.view === 'full') {
-			this.view = 'tabs';
-		} else {
-			this.view = 'full';
-		}
-
-		localStorage.setItem('view', this.view);
-	}
+	
 }
+

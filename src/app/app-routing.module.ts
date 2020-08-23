@@ -13,7 +13,7 @@ const routes: Routes = [
 	{path: '', redirectTo: '/main', pathMatch: 'full'},
 	{path: 'main', component: MainComponent},
 	{
-		path: 'tabs',
+		path: 'tabs', 
 		component: TabsPageComponent,
 		children: [
 			{path: '', redirectTo: 'about-me', pathMatch: 'full'},
