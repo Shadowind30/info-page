@@ -1,16 +1,8 @@
-<div class="navbar">	
-	<button 
-		routerLink = '/main'
-		routerLinkActive="active"
-	>
-		Full View
-	</button>
-
-	<button 
-		routerLink = '/tabs'
-		routerLinkActive="active"
-	>
-		Tabs View
-	</button>
-</div>	
+<mat-toolbar color="primary" class="navbar">	
+	<p class="mat-headline">My Resume</p>
+	<div>
+		<button mat-button  routerLink = "/main" routerLinkActive="active">Full View</button>
+		<button mat-button  routerLink= "/tabs" routerLinkActive="active">Tabs View</button>
+	</div>
+</mat-toolbar>	
 <router-outlet></router-outlet>

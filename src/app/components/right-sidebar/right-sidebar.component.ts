@@ -90,7 +90,7 @@ export class RightSidebarComponent implements OnInit {
   }
 
   updateSkill(currentSkill: string) {
-  	if (!currentSkill || this.checkSkill()) return;
+  	//if (!currentSkill || this.checkSkill()) return;
   	const index = this.skills.indexOf(this.getSkill(currentSkill));
    	this.skills[index] = this.formValue.toUpperCase();
   	this.saveSkills();

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { MaterialModule } from './material.module';
 
 import {GithubInfoService} from './github-info.service';
 
@@ -10,7 +10,6 @@ import { LeftSidebarComponent } from '../components/left-sidebar/left-sidebar.co
 import { RightSidebarComponent } from '../components/right-sidebar/right-sidebar.component';
 import { RepoCardContainerComponent } from '../components/repo-card-container/repo-card-container.component';
 import { SpinnerLoaderComponent } from '../components/spinner-loader/spinner-loader.component';
-
 
 
 @NgModule({
@@ -24,12 +23,13 @@ import { SpinnerLoaderComponent } from '../components/spinner-loader/spinner-loa
     CommonModule,
     HttpClientModule,
     FormsModule,
+    MaterialModule
   ],
   exports: [
   	LeftSidebarComponent,
   	RepoCardContainerComponent,
   	RightSidebarComponent,
-    SpinnerLoaderComponent
+    SpinnerLoaderComponent,
   ],
   providers: [GithubInfoService]
 })

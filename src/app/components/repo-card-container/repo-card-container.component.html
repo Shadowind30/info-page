@@ -1,20 +1,9 @@
-<div class="center-container">
-  
 <app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
 <h1 *ngIf="!isError">{{ isLoading ? 'Loading...' : 'Github Projects' }}</h1>
-
 <h1 class="error-text" *ngIf="isError">Request Failed</h1>
-<div class="wrapper">
-    <div class="card-container" *ngFor="let repo of githubRepos">
-      <div class="top">
-        <h2 class="title">{{repo.name}}</h2>       
-        <p class="star-text">Stars: {{repo.stargazers_count}}</p>
-      </div>
-      <div class="bottom">
-       <h3 class="language">{{repo.language || 'not available'}}</h3>
-       <a [href]="repo.clone_url" class="link" [title]="repo.description">#</a>
-      </div>
-    </div>
-</div>
-
+<div class="card-container" *ngFor="let repo of githubRepos">
+  <h2 class="title">{{repo.name}}</h2>       
+  <p class="star-text">Stars: {{repo.stargazers_count}}</p>
+    <h3 class="language">{{repo.language || 'not available'}}</h3>
+    <a [href]="repo.clone_url" class="link" [title]="repo.description">#</a>
 </div>

@@ -1,19 +1,11 @@
-<div class="container">
-	<h1 class="title">Skills</h1>
-	<p *ngIf="skills.length === 0">Add a skill from the form below</p>
-	<div class="skills">
-		<div class="single-skill" *ngFor="let skill of skills">
-			<div class="skill-title">
-				<h3>{{skill}}</h3> 
-			</div>
-			<div class="skill-options">
-					<button (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
-					<button (click)="removeSkill(skill)" [disabled] = "isUpdating">X</button>  
-				</div>
-		</div>
-	</div>
-	<input *ngIf="canEdit" [(ngModel)] = "formValue"/>
-	<button (click)="setEdit()" class="save-button">
+<h1 class="title">Skills</h1>
+<p *ngIf="skills.length === 0">Add a skill from the form below</p>
+<div class="single-skill" *ngFor="let skill of skills">
+	<h3>{{skill}}</h3> 
+	<button mat-raised-button color="primary" (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
+	<button mat-raised-button (click)="removeSkill(skill)" [disabled] = "isUpdating">X</button>  
+</div>
+<input *ngIf="canEdit" [(ngModel)] = "formValue"/>
+<button mat-raised-button (click)="setEdit()" class="save-button">
 	{{ canEdit === true ? 'Save' : 'Add Skill'}}
 </button>
-</div>

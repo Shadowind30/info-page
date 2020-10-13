@@ -1,15 +1,17 @@
+mat-toolbar {
+	justify-content: space-between;
+	margin-bottom: 2%;
+	border-bottom-style: 50px rgba(0, 0, 0, 0.5);
+}
 
-
-.tab-buttons{
+div {
 	padding: 2%;
 }
 
-.buttons button{
-	margin: 1%;
-	padding: 2%;
+span.active {
+	color:#f39;
 }
 
-.buttons .button-active{
-	background-color: #777;
-	color: #fff;
+span:hover {
+	color: #f3f;
 }

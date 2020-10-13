@@ -1,26 +1,15 @@
-<div class="container">
-	<app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
-
-	<h1 *ngIf="isLoading && !isError">Loading...</h1>
-	<h1 class="error-text" *ngIf="isError">Request Failed</h1>
-  
-
-
-	<img *ngIf="!isLoading" [src]="user.avatar_url" alt="user" />
-	
-	<div class="name" *ngIf="!isLoading">
-		<strong>{{user.name}}</strong>
-	</div>
-
-	<div class="role" *ngIf="!isLoading">{{user.bio}}</div>
-
-	<p class="summary" *ngIf="!canEdit && !isLoading">
-		{{summary.trim() || 'Add a Summary'}}
-	</p>
-
-	<textarea *ngIf="canEdit" [(ngModel)] = "summary" rows=10> </textarea>
-	<button *ngIf="!isLoading" (click)="setCanEdit(canEdit)">
-		{{ canEdit ? 'Save' :'Edit' }}
-  </button>
-
+<app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
+<h1 *ngIf="isLoading && !isError">Loading...</h1>
+<h1 class="error-text" *ngIf="isError">Request Failed</h1>
+<img *ngIf="!isLoading" [src]="user.avatar_url" alt="user" />
+<div class="name" *ngIf="!isLoading">
+	<strong>{{user.name}}</strong>
 </div>
+<div class="role" *ngIf="!isLoading">{{user.bio}}</div>
+<p class="summary" *ngIf="!canEdit && !isLoading">
+	{{summary.trim() || 'Add a Summary'}}
+</p>
+<input *ngIf="canEdit" [(ngModel)] = "summary" rows=10/> 
+<button mat-raised-button  *ngIf="!isLoading" (click)="setCanEdit(canEdit)">
+	{{ canEdit ? 'Save' :'Edit' }}
+</button>
