@@ -4,6 +4,6 @@
 <div class="card-container" *ngFor="let repo of githubRepos">
   <h2 class="title">{{repo.name}}</h2>       
   <p class="star-text">Stars: {{repo.stargazers_count}}</p>
-    <h3 class="language">{{repo.language || 'not available'}}</h3>
-    <a [href]="repo.clone_url" class="link" [title]="repo.description">#</a>
+  <h3 class="language">{{repo.language || 'not available'}}</h3>
+  <a [href]="repo.clone_url" class="link" [title]="repo.description">#</a>
 </div>

@@ -10,6 +10,6 @@
 	{{summary.trim() || 'Add a Summary'}}
 </p>
 <input *ngIf="canEdit" [(ngModel)] = "summary" rows=10/> 
-<button mat-raised-button  *ngIf="!isLoading" (click)="setCanEdit(canEdit)">
+<button class="btn btn-md btn-secondary m-2" *ngIf="!isLoading" (click)="setCanEdit(canEdit)">
 	{{ canEdit ? 'Save' :'Edit' }}
 </button>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { MaterialModule } from './material.module';
 
 import {GithubInfoService} from './github-info.service';
 
@@ -23,7 +22,6 @@ import { SpinnerLoaderComponent } from '../components/spinner-loader/spinner-loa
     CommonModule,
     HttpClientModule,
     FormsModule,
-    MaterialModule
   ],
   exports: [
   	LeftSidebarComponent,
