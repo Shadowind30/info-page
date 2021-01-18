@@ -1,9 +1,14 @@
-<app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
-<h1 *ngIf="!isError">{{ isLoading ? 'Loading...' : 'Github Projects' }}</h1>
-<h1 class="error-text" *ngIf="isError">Request Failed</h1>
-<div class="card-container" *ngFor="let repo of githubRepos">
-  <h2 class="title">{{repo.name}}</h2>       
-  <p class="star-text">Stars: {{repo.stargazers_count}}</p>
-  <h3 class="language">{{repo.language || 'not available'}}</h3>
-  <a [href]="repo.clone_url" class="link" [title]="repo.description">#</a>
+<div class="bg-gray-100 flex flex-col items-center">
+	<app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
+	<h1 class="text-2xl text-center font-bold" *ngIf="!isError">{{ isLoading ? 'Loading...' : 'Github Projects' }}</h1>
+	<h1 class="error-text" *ngIf="isError">Request Failed</h1>
+	<div class="bg-white rounded-x1 shadow-md m-2 w-2/3 py-3" *ngFor="let repo of githubRepos">
+  	<a [href]="repo.clone_url" class="" [title]="repo.description">
+  		<h2 class="font-bold text-lg text-center">{{repo.name}}</h2>     
+  	</a>  
+  	<div class="flex justify-evenly">
+  		<p class="mx-2">Stars: {{repo.stargazers_count}}</p>
+  		<h3 class="mx-2">{{repo.language || 'not available'}}</h3>
+  	</div>
+	</div>
 </div>

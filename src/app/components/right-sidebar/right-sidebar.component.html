@@ -1,11 +1,15 @@
-<h1 class="title">Skills</h1>
-<p *ngIf="skills.length === 0">Add a skill from the form below</p>
-<div class="single-skill" *ngFor="let skill of skills">
-	<h3>{{skill}}</h3> 
-	<button class="" (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
-	<button class="" (click)="removeSkill(skill)" [disabled] = "isUpdating">Delete</button>  
+<div class="bg-gray-100">
+	<h1 class="font-bold text-2xl text-center">Skills</h1>
+	<p *ngIf="skills.length === 0">Add a skill from the form below</p>
+	<div class="flex justify-around items-center bg-white shadow-md rounded-x1 m-2" *ngFor="let skill of skills">
+		<h3 class="w-6/10">{{skill}}</h3> 
+		<div class="flex justify-around w-4/10">
+			<button class="m-2 bg-gray-500 text-white p-2 rounded-lg w-1/2" (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
+			<button class="m-2 bg-red-500 text-white p-2 rounded-lg w-1/2" (click)="removeSkill(skill)" [disabled] = "isUpdating">Delete</button> 
+		</div> 
+	</div>
+	<input *ngIf="canEdit" [(ngModel)] = "formValue"/>
+	<button class="m-2 bg-blue-400 text-white p-3 rounded-lg" (click)="setEdit()">
+	{{ canEdit === true ? 'Save' : 'Add Skill +'}}
+	</button>
 </div>
-<input *ngIf="canEdit" [(ngModel)] = "formValue"/>
-<button (click)="setEdit()" class="">
-	{{ canEdit === true ? 'Save' : 'Add Skill'}}
-</button>
