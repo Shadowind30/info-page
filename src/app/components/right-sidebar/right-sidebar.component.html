@@ -2,10 +2,10 @@
 <p *ngIf="skills.length === 0">Add a skill from the form below</p>
 <div class="single-skill" *ngFor="let skill of skills">
 	<h3>{{skill}}</h3> 
-	<button class="btn btn-md btn-primary m-1" (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
-	<button class="btn btn-md btn-danger m-1" (click)="removeSkill(skill)" [disabled] = "isUpdating">Delete</button>  
+	<button class="" (click)="setUpdate(skill)" [disabled] = "isAdding" >Edit</button>
+	<button class="" (click)="removeSkill(skill)" [disabled] = "isUpdating">Delete</button>  
 </div>
 <input *ngIf="canEdit" [(ngModel)] = "formValue"/>
-<button (click)="setEdit()" class="save-button btn btn-lg btn-primary m-2">
+<button (click)="setEdit()" class="">
 	{{ canEdit === true ? 'Save' : 'Add Skill'}}
 </button>
