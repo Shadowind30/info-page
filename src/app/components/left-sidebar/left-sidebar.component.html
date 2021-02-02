@@ -1,16 +1,16 @@
-<div class="bg-gray-400 text-gray-50 py-2">
+<div class="bg-gray-400 text-gray-50 py-2 shadow-md rounded-x1 m-2 flex flex-col">
   <app-spinner-loader *ngIf="isLoading && !isError"></app-spinner-loader>
-	<h1 *ngIf="isLoading && !isError">Loading...</h1>
-	<h1 class="error-text" *ngIf="isError">Request Failed</h1>
-	<img class="rounded-full" *ngIf="!isLoading" [src]="user.avatar_url" alt="user" />
-	<div class="text-2xl" *ngIf="!isLoading">
+	<h1 class="m-1.5 text-gray-100" *ngIf="isLoading && !isError">Loading...</h1>
+	<h1 class="error-text m-1.5" *ngIf="isError">Request Failed</h1>
+  <img class="rounded-full w-9/12 m-1.5" *ngIf="!isLoading" [src]="user.avatar_url" alt="user" />
+	<div class="text-2xl m-1.5" *ngIf="!isLoading">
 		<strong>{{user.name}}</strong>
 	</div>
-	<div class="text-1.5xl text-gray-100" *ngIf="!isLoading">{{user.bio}}</div>
-		<p class="summary" *ngIf="!canEdit && !isLoading">
+	<div class="text-1.5xl text-gray-100 m-1.5" *ngIf="!isLoading">{{user.bio}}</div>
+		<p class="m-1.5 " *ngIf="!canEdit && !isLoading">
 			{{summary.trim() || 'Add a Summary'}}
 		</p>
-	<input *ngIf="canEdit" [(ngModel)] = "summary" rows=10/> 
+	<input *ngIf="canEdit" [(ngModel)] = "summary" rows=10/>
 	<button class="bg-blue-400 text-white rounded-lg m-2 p-3 w-1/5" *ngIf="!isLoading" (click)="setCanEdit(canEdit)">
 		{{ canEdit ? 'Save' :'Edit' }}
 	</button>
