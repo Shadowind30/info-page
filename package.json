@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,7 @@
     "@angular/platform-browser": "~11.1.1",
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
-    "autoprefixer": "^10.2.1",
+    "autoprefixer": "^10.2.4",
     "postcss": "^8.2.4",
     "rxjs": "~6.5.5",
     "tailwindcss": "^2.0.2",
